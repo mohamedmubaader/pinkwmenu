@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Salads Menu</p>
+        <a class="navbar-brand" href="/salads.html">
+          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+      <div class="mb-5" id="rows"></div>      
+    </div>
+    
+<script>
+    const menu = [
+    {
+    id: 1,
+    title: 'STRAWBERRY FETA',
+    titleAr: 'سلطة الفيتا بالفراولة',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Strawberry-Feta.jpg',
+    desc: `ROCCA, FRESH STRAWBERRIES, FETA CHEESE, ALMONDS, SLICE PINE
+           NUTS, BALSAMIC VINAIGRETTE`,
+    descAr: `جرجير ، فراولة طازجة ، جبنة فيتا ، لوز ، شرائح صنوبر ، خل بلسميك`,
+  },
+  {
+    id: 2,
+    title: 'CEASER (OPTION W/ CHICKEN OR SHRIMP)',
+    titleAr: 'سيزر (إختيار مع / دجاج او ربيان)',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Caesar-Salad.jpg',
+    desc: `LETTUCE, BLACK OLIVE, CROUTONS, RANCH, PARMESAN CHEESE`,
+    descAr: `خس ، زيتون أسود ، خبز محمص ، رانش ، جبنة بارميزان`,
+  },
+  {
+    id: 3,
+    title: 'POWERHOUSE QUINOA',
+    titleAr: 'باور هاوس كينو',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Powerhouse-Quinoa-Salad.jpg',
+    desc: `ROCCA, QUINOA, CORN, EDAMAME, AVOCADO, CRANBERRIES,
+          PARSLEY, ALMONDS, FETA CHEESE`,
+    descAr: `جرجير ، كينوا ، ذرة ، ادامامي ، افوكادو ، توت بري ، بقدونس ، لوز ،
+    جبنة فيتا`,
+  },
+  {
+    id: 4,
+    title: 'BEETROOT SALAD',
+    titleAr: 'سلطة الشمندر',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Beetroot-Salad.jpg',
+    desc: `ROCCA, FRESH BEETROOT, SPINACH, FETA CHEESE, POMEGRANATE,
+    PINE NUTS, BALSAMIC VINAIGRETTE`,
+    descAr: `جرجير ، شمندر طازج ، سبانخ ، جبنة فيتا ، رمان ، صنوبر ، خل بلسميك`,
+  },
+  {
+    id: 5,
+    title: 'DORITOS BACON',
+    titleAr: 'دوريتوس بيكن',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Dorito-Salad.jpg',
+    desc: `CABBAGE, SWEET CORN, ROMAINE LETTUCE, TOMATO, ONION
+    CARROTS, CHIVES, DORITOS, RANCH, CORIANDER`,
+    descAr: `ملفوف ، ذرة حلوة ، خس ، طماطم ، بصل، جزر ، ثوم ، دوريتوس ،
+    رانش ، كزبرة`,
+  },
+  {
+    id: 6,
+    title: 'SPICY CRAB',
+    titleAr: 'سبايسي كراب',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Spicy-Crab-Salad.jpg',
+    desc: `CARROTS, CUCUMBER, MANGO, CABBAGE, SWEET SPICY MAYO
+    SAUCE, SHREDDED ICEBERG LETTUCE, CRAB SHREDDED, AVOCADO`,
+    descAr: `جزر ، خيار ، مانجو ، ملفوف ، صوص مايو حار حلو ، خس ايسبيرج
+    مبشور ، كابوريا مبشور ، افوكادو`,
+  },
+  {
+    id: 7,
+    title: 'PECAN STRAWBERRY SALAD ',
+    titleAr: 'سلطة الفراولة والبيكان ',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.750,
+    img: 'public/images/salads/Peacan-Strawberry-salad.jpg',
+    desc: `ARUGULA, BABY SPINACH, LOLO ROSSO, FRESH STRAWBERRY,
+          JACKFRUIT, ROASTED PECAN, FETA CHEESE, PARMESAN CHIPS, FRESH
+          ORANGE JUICE, FRESH LEMON JUICE, DIJON MUSTARD, HONEY,
+          BALSAMIC VINAIGRETTE, SALT & WHITE PEPPER`,
+    descAr: `جرجير ، سبانخ صغير ، لولو روسو ، فراولة طازجة ، جاك فروت ، بيكان
+    محمص ، جبنة فيتا ، رقائق بارميزان ، عصير برتقال طازج ، عصير ليمون
+    طازج ، خردل ديجون ، عسل ، خل بلسميك ، ملح وفلفل أبيض`,
+  },
+  {
+    id: 8,
+    title: 'CLASSIC CEASAR SALAD',
+    titleAr: 'سلطة السيزر الكلاسيكية',
+    categoryEn: 'salads',
+    category: 'Salads / السلطات',
+    price: 3.250,
+    img: 'public/images/salads/Caesar-Salad-classic.jpg',
+    desc: `LETTUCE ROMAINE, CAESAR DRESSING, GARLIC CROUTON, PARMESAN
+    CHEESE, GRILLED CHICKEN, MAYONNAISE, YELLOW MUSTARD, WHITE
+    VINEGAR, GARLIC, CAPERS ANCHOVIES`,
+    descAr: `خس رومين ، صلصة سيزر ، خبز محمص بالثوم ، جبنة بارميزان ، دجاج
+    مشوي ، مايونيز ، خردل أصفر ، خل أبيض ، ثوم ، أنشوجة كبر`
+  },
+]
+      
+const passedId = localStorage.getItem('passedId')
+const rowitems = document.getElementById("rows");
+
+const items =
+    `
+    <div class="container d-flex flex-column align-items-center mb-5">
+        <div class="card cardshow mb-5" >
+            <img src=${menu[passedId-1].img} width="300" class="card-img-top border border-1" alt="...">
+            <div class="card-body p-0">
+                <h5 class="card-title my-3 text-center">${menu[passedId-1].title}</h5>
+                <h5 class="card-title text-center">${menu[passedId-1].titleAr}</h5>
+                <hr>
+                <p class="card-text my-3 text-center">${menu[passedId-1].desc}</p>
+                <hr>
+                <p class="card-text  text-center">${menu[passedId-1].descAr}</p>
+            </div>
+            <div class="">
+                <p class="my-1 text-center fw-bold my-3">KD ${menu[passedId-1].price.toFixed(3)}</p>
+            </div>         
+        </div>
+    </div>`
+
+ rowitems.innerHTML = items
+ localStorage.clear()
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>
+ <script src="menu.js" type="text/javascript"> </script>
+    
+
+</body>
+</html>

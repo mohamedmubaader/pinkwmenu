@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Breakfast Menu</p>
+        <a class="navbar-brand" href="/index.html">
+          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+   
+      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+    </div>
+
+<script>
+
+const menu = [
+  {
+    id: 1,
+    title: 'AVOCADO POACHED EGGS',
+    titleAr: 'أفوكادو بوتشد إيقز',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.250,
+    img: '/public/images/breakfast/Avocado-Poached-Eggs.jpg',
+    desc: `2 eggs, avocado /guacamole, mix capsicum, sourdough bread,butter`,
+    descAr: `اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز`,
+  },                                    
+  {
+    id: 2,
+    title: 'BERRIES FRENCH TOAST',
+    titleAr: 'توست فرنسي بالتوت',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.500,
+    img: '/public/images/breakfast/Berries-French-Toast.jpg',
+    desc: 'FRENCH TOAST, MIX BERRIES, MAPLE ',
+    descAr: `توست فرنسي ، توت مشكل ، مابل سيريب`,
+  },
+ {
+    id: 3,
+    title: 'PINK PANCAKES (OPTION W/ MAPLE OR CHOCOLATE SAUCE)',
+    titleAr: 'بينك بان كيك (إختيار مع مابل سيريب أو الشوكولاته)',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.00,
+    img: '/public/images/breakfast/Pink-Pancake-chocolate.jpg',
+    desc: `3 PCS PANCAKES, MIX BERRIES, ICING SUGAR, MAPLE SYRUP, BUTTER`,
+    descAr: ` ثلاث (3) قطع بان كيك ، توت مشكل ، بودرة سكر ، مابل سيريب ، زبدة `,
+ },
+  {
+    id: 4,
+    title: 'SHAKSHOKA',
+    titleAr: 'شكشوكة',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.500,
+    img: '/public/images/breakfast/Shakshoka-new.jpg',
+    desc: `GRILLED EGGS, MUSHROOM, TOMATO, ONION, FETA CHEESE, `,
+    descAr: `بيض مشوي ، مشروم ، طماطم ، بصل ، جبنة فيتا`,
+  },
+  {
+    id: 5,
+    title: 'CLUB SANDWICH AND FRIES',
+    titleAr: 'كلوب ساندويتش مع بطاط',
+       categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 4.500,
+    img: '/public/images/breakfast/sandwich.jpg',
+    desc: `WHITE BREAD, MIX RANCH MAYO, TURKEY, TURKEY BACON, LETTUCE,TOMATO, EGG, SWISS CHEESE`,
+    descAr: `خبز ابيض ، ميكس رانش مايو ، تركي الديك الرومي ،تركي اللحم المقدد ، خس ، طماطم ، بيضة ، جبنة سويسرية`,
+  },
+  {
+    id: 6,
+    title: 'CLASSIC EGGS BENEDICT',
+    titleAr: 'بيض بينديكت الكلاسيكيه',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.500,
+    img: '/public/images/breakfast/Classic-Egg-Benedict-new.jpg',
+    desc: `2 POUCHED EGG, MINCED BEEF, ASSORTED HERBS, SESAME SEED HOLLANDISE SAUCE `,
+    descAr: ` ثلاث (3) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز `,
+  },
+         
+];
+
+const rows = document.querySelector('.row')
+  window.addEventListener('DOMContentLoaded', function(){
+    const generatedHtml = Object.keys(menu).reduce((accum, currKey) => accum +
+      `
+        <div class="col-12 col-md-6 col-lg-4 mb-3" id=${menu[currKey].id} value=${menu[currKey].id} onclick="showCard(this.id)">
+            <div class="card" id="id1">
+                <img src=${menu[currKey].img} width="300" class="card-img-top border border-1" alt="...">
+                <div class="card-body p-0">
+                    <h5 class="card-title my-3 text-center">${menu[currKey].title}</h5>
+                    <h5 class="card-title text-center">${menu[currKey].titleAr}</h5>
+                    <hr>
+                </div>
+                <div class="">
+                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                </div>         
+            </div>
+        </div>`
+    ,'')          
+    rows.innerHTML = generatedHtml
+  },false)
+
+  const showCard = (e) => { 
+    localStorage.setItem('passedId',e)
+    window.location.href = "breakfastItem.html"
+  }
+
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>
