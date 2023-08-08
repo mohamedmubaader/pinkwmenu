@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Desserts Menu</p>
+        <a class="navbar-brand" href="/index.html">
+            <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+   
+      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+    </div>
+
+<script> 
+    const menu = [
+    {
+    id: 1,
+    title: 'BERRIES FRENCH TOAST',
+    titleAr: 'توست فرنسي بالتوت',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.500,
+    img: 'public/images/desserts/Berries-French-Toast.jpg',
+   },
+   {
+    id: 2,
+    title: 'SAFRON CAKE',
+    titleAr: 'كيك الزعفران',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.750,
+    img: 'public/images/desserts/Safforn-cake.jpg',
+   },
+   {
+    id: 3,
+    title: 'PINK MOLTEN',
+    titleAr: 'مولتن بينك',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.750,
+    img: 'public/images/desserts/Pink-molten.jpg',
+   },
+   {
+    id: 4,
+    title: 'SIGNATURE PINK CHEESECAKE',
+    titleAr: 'تشيز كيك بينك سيجنتشر',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.750,
+    img: 'public/images/desserts/Signature-Pink-Cheesecake.jpg',
+   },
+   {
+    id: 5,
+    title: 'RED VELVET CAKE',
+    titleAr: 'ريد فيلفيت كيك',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.750,
+    img: 'public/images/desserts/Red-Velvet-cake.jpg',
+   },
+   {
+    id: 6,
+    title: 'HONEY CAKE',
+    titleAr: 'كيكة بالعسل',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.750,
+    img: 'public/images/desserts/honey-cake.jpg',
+    
+   },
+   {
+    id: 7,
+    title: 'CHOCOLATE CAKE',
+    titleAr: 'كيكة الشوكولاتة',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.250,
+    img: 'public/images/desserts/choco-cake.jpg',
+   },
+   {
+    id: 8,
+    title: 'LOTUS / KINDER / NUTELLA CRÊPE',
+    titleAr: 'كريب لوتس / كيندر / نوتيل',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.500,
+    img: 'public/images/desserts/kinder-crepe.jpg',
+   },
+   {
+    id: 9,
+    title: 'KINDER RUSH',
+    titleAr: 'كندر رش',
+    categoryEn: 'desserts',
+    category: 'Desserts / حلويات',
+    price: 3.500,
+    img: 'public/images/desserts/kinder-rush.jpg',
+   },
+]
+ 
+const rows = document.querySelector('.row')
+  window.addEventListener('DOMContentLoaded', function(){
+    const generatedHtml = Object.keys(menu).reduce((accum, currKey) => accum +
+      `
+        <div class="col-12 col-md-6 col-lg-4 mb-3" id=${menu[currKey].id} value=${menu[currKey].id} onclick="showCard(this.id)">
+            <div class="card" id="id1">
+                <img src=${menu[currKey].img} width="300" class="card-img-top border border-1" alt="...">
+                <div class="card-body p-0">
+                    <h5 class="card-title my-3 text-center">${menu[currKey].title}</h5>
+                    <h5 class="card-title text-center">${menu[currKey].titleAr}</h5>
+                    <hr>
+                </div>
+                <div class="">
+                    <p class="my-1 text-center fw-bold">KD${menu[currKey].price.toFixed(3)}</p>
+                </div>         
+            </div>
+        </div>`
+    ,'')          
+    rows.innerHTML = generatedHtml
+  },false)
+
+    const showCard = (e) => { 
+      localStorage.setItem('passedId',e)
+      window.location.href = "dessertItem.html"
+    }
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>

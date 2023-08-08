@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Breakfast Menu</p>
+      </div>
+      
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="rows">
+        <div class="col" id="colid1">
+            <div class="card" id="id1">
+                <a href="#" class="text-decoration-none">
+                    <img src="./public/images/breakfast/Berries-French-Toast.jpg" width="300" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title my-3 text-center">أفوكادو بوتشد إيقز</h5>
+                    <h5 class="card-title text-center">AVOCADO POACHED EGGS</h5>
+                    <hr>
+                    <p class="card-text my-3 text-center">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <hr>
+                    <p class="card-text  text-center">اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز</p>
+                </div>
+                <div class="">
+                    <p class="my-2 text-center fw-bold">KD 3.250</p>
+                </div>         
+            </div>
+        </div>
+        <div class="col" id="colid2">
+            <div class="card" id="id2">
+                <a href="#" class="text-decoration-none">
+                    <img src="./public/images/breakfast/sandwich.jpg" width="300" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title my-3 text-center">أفوكادو بوتشد إيقز</h5>
+                    <h5 class="card-title text-center">AVOCADO POACHED EGGS</h5>
+                    <hr>
+                    <p class="card-text my-3 text-center">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <hr>
+                    <p class="card-text  text-center">اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز</p>
+                </div>
+                <div class="">
+                    <p class="my-2 text-center fw-bold">KD 3.250</p>
+                </div>         
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="#" class="text-decoration-none">
+                    <img src="./public/images/breakfast/Berries-French-Toast.jpg" width="300" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title my-3 text-center">أفوكادو بوتشد إيقز</h5>
+                    <h5 class="card-title text-center">PINK PANCAKES (OPTION W/ MAPLE OR CHOCOLATE SAUCE)</h5>
+                    <hr>
+                    <p class="card-text my-3 text-center">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <hr>
+                    <p class="card-text  text-center">اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز</p>
+                </div>
+                <div class="">
+                    <p class="my-2 text-center fw-bold">KD 3.250</p>
+                </div>         
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="#" class="text-decoration-none">
+                    <img src="./public/images/breakfast/Berries-French-Toast.jpg" width="300" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title my-3 text-center">أفوكادو بوتشد إيقز</h5>
+                    <h5 class="card-title text-center">AVOCADO POACHED EGGS</h5>
+                    <hr>
+                    <p class="card-text my-3 text-center">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <hr>
+                    <p class="card-text  text-center">اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز</p>
+                </div>
+                <div class="">
+                    <p class="my-2 text-center fw-bold">KD 3.250</p>
+                </div>         
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="#" class="text-decoration-none">
+                    <img src="./public/images/breakfast/Berries-French-Toast.jpg" width="300" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title my-3 text-center">أفوكادو بوتشد إيقز</h5>
+                    <h5 class="card-title text-center">AVOCADO POACHED EGGS</h5>
+                    <hr>
+                    <p class="card-text my-3 text-center">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <hr>
+                    <p class="card-text  text-center">اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز</p>
+                </div>
+                <div class="">
+                    <p class="my-2 text-center fw-bold">KD 3.250</p>
+                </div>         
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="#" class="text-decoration-none">
+                    <img src="./public/images/breakfast/Berries-French-Toast.jpg" width="300" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title my-3 text-center">أفوكادو بوتشد إيقز</h5>
+                    <h5 class="card-title text-center">AVOCADO POACHED EGGS</h5>
+                    <hr>
+                    <p class="card-text my-3 text-center">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <hr>
+                    <p class="card-text  text-center">اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز</p>
+                </div>
+                <div class="">
+                    <p class="my-2 text-center fw-bold">KD 3.250</p>
+                </div>         
+            </div>
+        </div>
+
+    <script>
+        const row = document.getElementById('row')
+        menu.array.forEach(element => {
+             const col = document.createElement('col')
+            const card = document.createElement('card')
+            const hr = document.createElement('hr')
+            const a = document.createElement('a')
+            a.className.add('text-decoration-none')
+            const img1 = document.createElement('img')
+            img1.className.add("card-img-top")
+            img1.width=300
+            a.appendChild(img1)
+            const carddiv = document.createElement('div')
+            carddiv.className.add('card-body')
+
+            const h5_1 = document.createElement('h5')
+            h5_1.className.add('card-title my-3 text-center')
+
+            const h5_2 = document.createElement('h5')
+            h5_2.className.add('card-title text-center')
+
+            const p_desc_e = document.createElement('p')
+            p_desc_e.className.add('card-text my-3 text-center')
+
+            const p_desc_a = document.createElement('p')
+            p_desc_a.className.add('card-text  text-center')
+
+            const pricediv = document.createElement('div')
+            const p_price = document.createElement('p')
+            p_price.className.add('my-2 text-center fw-bold')
+            pricediv.appendChild(p_price)
+
+            carddiv.appendChild(h5_1)
+            carddiv.appendChild(h5_2)
+            carddiv.appendChild(hr)
+            carddiv.appendChild(p_desc_e)
+            carddiv.appendChild(hr)
+            carddiv.appendChild(p_desc_a)
+            carddiv.appendChild(pricediv)
+            
+            card.appendChild(a)
+            card.appendChild(carddiv)
+
+            col.appendChild(card)
+
+            Object.entries(element).forEach( value => {
+                a.href='#'
+                img1.src=value.
+            })
+        });
+        {
+           
+            a.href=menu[j]
+
+            
+            img1.src=''
+            img1.alt=''
+
+ 
+            const carddiv = document.createElement('div')
+            carddiv.className.add('card-body')
+
+            const h5_1 = document.createElement('h5')
+            h5_1.className.add('card-title my-3 text-center')
+
+            const h5_2 = document.createElement('h5')
+            h5_2.className.add('card-title text-center')
+
+            const p_desc_e = document.createElement('p')
+            p_desc_e.className.add('card-text my-3 text-center')
+
+            const p_desc_a = document.createElement('p')
+            p_desc_a.className.add('card-text  text-center')
+
+            const pricediv = document.createElement('div')
+            const p_price = document.createElement('p')
+            p_price.className.add('my-2 text-center fw-bold')
+            pricediv.appendChild(p_price)
+
+            carddiv.appendChild(h5_1)
+            carddiv.appendChild(h5_2)
+            carddiv.appendChild(hr)
+            carddiv.appendChild(p_desc_e)
+            carddiv.appendChild(hr)
+            carddiv.appendChild(p_desc_a)
+            carddiv.appendChild(pricediv)
+            
+            card.appendChild(a)
+            card.appendChild(carddiv)
+
+            col.appendChild(card)
+                   
+            // li.addEventListener('click',function(){
+
+            // window.location.href = "breakfast.html"
+         
+        }
+      
+    </script>
+      
+    <script src="./bootstrap.min.js"></script>
+    <script src="data.js"></script>
+</body>
+</html>

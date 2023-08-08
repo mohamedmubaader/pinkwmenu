@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Pizza Menu</p>
+        <a class="navbar-brand" href="/pizza.html">
+          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+      <div class="mb-5" id="rows"></div>      
+    </div>
+    
+<script>
+    const menu = [
+    {
+    id: 1,
+    title: 'LITTLE ITALY PIZZA',
+    titleAr: 'بيتزا ليتل إيطالي',
+    categoryEn: 'pizza',
+    category: 'Pizza / بيتزا',
+    price: 3.750,
+    img: 'public/images/pizza/pizza1.jpg',
+    desc: `PIZZA DOUGH, TOMATO SAUCE, PEPPERONI, OLIVE OIL, ROCCA, 
+    OREGANO, MOZZARELLA CHEESE`,
+    descAr: `عجينة بيتزا ، صلصة طماطم ، بيبروني ، زيت زيتون ، جرجير ، اوريجانو ،
+    جبنة موتزاريل`,
+   },
+   {
+    id: 2,
+    title: 'PINK’S SIGNATURE MARGHERITA',
+    titleAr: 'بينك سيجنتشر مارغريتا',
+    categoryEn: 'pizza',
+    category: 'Pizza / بيتزا',
+    price: 3.500,
+    img: 'public/images/pizza/pizza2.jpg',
+    desc: `PIZZA DOUGH, PINK SAUCE, OLIVE OIL, OREGANO, MOZZARELLA 
+    CHEESE`,
+    descAr: 'عجينة بيتزا ، صلصة وردية ، زيت زيتون ، زعتر ، جبنة موتزاريل',
+   },
+]
+      
+const passedId = localStorage.getItem('passedId')
+const rowitems = document.getElementById("rows");
+
+const items =
+    `
+    <div class="container d-flex flex-column align-items-center mb-5">
+        <div class="card cardshow mb-5" >
+            <img src=${menu[passedId-1].img} width="300" class="card-img-top border border-1" alt="...">
+            <div class="card-body p-0">
+                <h5 class="card-title my-3 text-center">${menu[passedId-1].title}</h5>
+                <h5 class="card-title text-center">${menu[passedId-1].titleAr}</h5>
+                <hr>
+                <p class="card-text my-3 text-center">${menu[passedId-1].desc}</p>
+                <hr>
+                <p class="card-text  text-center">${menu[passedId-1].descAr}</p>
+            </div>
+            <div class="">
+                <p class="my-1 text-center fw-bold my-3">KD ${menu[passedId-1].price.toFixed(3)}</p>
+            </div>         
+        </div>
+    </div>`
+
+ rowitems.innerHTML = items
+ localStorage.clear()
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>

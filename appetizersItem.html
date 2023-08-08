@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Appetizers Menu</p>
+        <a class="navbar-brand" href="/appetizers.html">
+            <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+      <div class="mb-5" id="rows"></div>      
+    </div>
+<script>
+
+const menu = [
+    {
+    id: 1,
+    title: 'CHICKEN QUESADILLA W/ SWEET POTATO',
+    titleAr: 'كاسادييا بالدجاج مع بطاطا حلوه',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.500,
+    img: '/public/images/appetizers/Chicken-Quesadilla-with-Sweet-Potatoes.jpg',
+    desc: `TORTILLA BREAD, MIX RANCH CHIVES, DICED CHICKEN, BLACK OLIVES,
+            MIX CAPSICUMS, CORN, MOZZARELLA CHEESE, POTATOES, ARUGULA,
+            CARROTS, SIGNATURE SAUCE, SWEET POTATO FRIES`,
+    descAr: ` خبز تورتيلا ، ميكس رانش ثوم ، مكعبات دجاج ، زيتون أسود ، فليفلة
+    مشكلة ، ذرة ، جبنة موزاريلا ، بطاطس ، جرجير ، جزر ، صلصة خاصة ،
+    بطاطا حلوة`,
+  },
+  {
+    id: 2,
+    title: 'VOLCANO BITES',
+    titleAr: 'ڤولكينو بايتس',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.750,
+    img: '/public/images/appetizers/Volcano-Bites.jpg',
+    desc: `CHICKEN BREAST WITH SPICY SAUCE, CARROTS, RANCH SAUCE`,
+    descAr: `دجاج مع صلصة حارة، جزر ، صلصة رانش`,
+  },
+  {
+    id: 3,
+    title: 'STREET STYLE FRIES',
+    titleAr: 'ستريت ستايل فرايز',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.500,
+    img: '/public/images/appetizers/Street-style-fries.jpg',
+    desc: `FRESH CUT FRIES, SPECIAL SAUCE, GRILLED ONION, FRIED ONION,
+          PARMESAN CHEESE, CHEESE SAUCE, GARNISH SPRING ONION`,
+    descAr: `بطاطا مقلية طازجة، صلصة خاصة، بصل مشوي ، بصل مقلي، جبنة
+    بارميزان ، صوص جبنة، بصل أخضر مقبلات`,
+  },
+  {
+    id: 4,
+    title: 'MOZARELLA BALLS',
+    titleAr: 'كرات الموزاريل',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.250,
+    img: '/public/images/appetizers/Mzzarella-Balls.jpg',
+    desc: `FRESH MUSHROM, MOZZARELLA CHEESE, SRIRACHA SAUCE`,
+    descAr: `فطر فريش ، جبنة موزاريلا ، صلصة سريراتشا`,
+  },
+  {
+    id: 5,
+    title: 'DYNAMITE PINK SHRIMP',
+    titleAr: 'دايناميت بينك شريمب',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 4.250,
+    img: '/public/images/appetizers/Pink-dynamite-shrimp.jpg',
+    desc: `8 PCS SHIRMP, PINK SAUCE, SPRING ONION, LOLOBIANDO LETTUCE`,
+    descAr: ` ثمان (8) قطع ربيان ، صلصة وردية، بصل أخضر ، خس لوبيوندو `,
+  },
+  {
+    id: 6,
+    title: 'LOS ANGELES FRIES',
+    titleAr: 'بطاط لوس انجلوس',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.500,
+    img: '/public/images/appetizers/Los-Angeles-Fries.jpg',
+    desc: `FRESH CUT FRIES, SAUCE, CARAMELIZED ONION, CHEESE SAUCE`,
+    descAr: `بطاطا مقلية طازجة ، صوص ، بصل مكرمل ، صوص جبنة`,
+  },
+  {
+    id: 7,
+    title: 'BUFFALO CHICKEN',
+    titleAr: 'بافلو دجاج',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.750,
+    img: '/public/images/appetizers/Buffalo-Chicken.jpg',
+    desc: `6 PCS CHICKEN, ONION, WORCESTERSHIRE SAUCE, BROWNE
+          SUGAR, WHITE PEPPER, RED HOT SAUCE, SRIRACHA, HONEY,
+          CILANTRO GREEN PASTE`,
+          descAr: ` ستة (6) قطع دجاج ، بصل ، صلصة رسيستيرشاير ، سكر بني ، فلفل أبيض 
+          صوص أحمر حار ، سريراتشا ، عسل ، عجينة الكزبرة الخضراء `,
+  },
+  {
+    id: 8,
+    title: 'BUFFALO SHRIMP',
+    titleAr: 'بافلو شريمب',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 3.750,
+    img: '/public/images/appetizers/Buffalo-Shrimp.jpg',
+    desc: `6 PCS SHRIMP, ONION, WORCESTERSHIRE SAUCE, BROWNE
+          SUGAR, WHITE PEPPER, RED HOT SAUCE, SRIRACHA, HONEY,
+          CILANTRO GREEN PASTE`,
+          descAr: ` ستة (6) قطع ربيان  بصل ، صلصة رسيستيرشاير ، سكر بني ، فلفل أبيض
+          صوص أحمر حار ، سريراتشا ، عسل ، عجينة الكزبرة الخضراء `,
+  },
+  
+  {
+    id: 9,
+    title: 'BUFFALO MIX (CHICKEN + SHRIMP)',
+    titleAr: 'ميكس البافلو ( دجاج + شريمب )',
+    categoryEn: 'appetizers',
+    category: 'Appetizers / المقبلات',
+    price: 4.250,
+    img: '/public/images/appetizers/Buffalo-Mix.jpg',
+    desc: `4 PCS CHICKEN, 4 PCS SHRIMP, ONION, WORCESTERSHIRE
+          SAUCE, BROWNE SUGAR, WHITE PEPPER, RED HOT SAUCE,
+          SRIRACHA, HONEY, CILANTRO GREEN PASTE`,
+          descAr: ` أربع (4) قطع دجاج ، 4 قطع ربيان ، بصل ، صلصة رسيستيرشاير ، سكر بني
+          فلفل أبيض ، صوص أحمر حار ، سريراتشا ، عسل ، عجينة الكزبرة الخضراء`,
+  },
+]
+      
+const passedId = localStorage.getItem('passedId')
+const rowitems = document.getElementById("rows");
+
+const items =
+    `
+    <div class="d-flex flex-column align-items-center mb-5">
+        <div class="card cardshow mb-5" >
+            <img src=${menu[passedId-1].img} width="300" class="card-img-top border border-1" alt="...">
+            <div class="card-body p-0">
+                <h5 class="card-title my-3 text-center">${menu[passedId-1].title}</h5>
+                <h5 class="card-title text-center">${menu[passedId-1].titleAr}</h5>
+                <hr>
+                <p class="card-text my-3 text-center">${menu[passedId-1].desc}</p>
+                <hr>
+                <p class="card-text  text-center">${menu[passedId-1].descAr}</p>
+            </div>
+            <div class="">
+                <p class="my-1 text-center fw-bold my-3">KD ${menu[passedId-1].price.toFixed(3)}</p>
+            </div>         
+        </div>
+    </div>`
+
+ rowitems.innerHTML = items
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>  
+</body>
+</html>

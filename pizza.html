@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Pizza Menu</p>
+        <a class="navbar-brand" href="/index.html">
+          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+   
+      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+    </div>
+
+<script>
+    const menu = [
+    {
+    id: 1,
+    title: 'LITTLE ITALY PIZZA',
+    titleAr: 'بيتزا ليتل إيطالي',
+    categoryEn: 'pizza',
+    category: 'Pizza / بيتزا',
+    price: 3.750,
+    img: 'public/images/pizza/pizza1.jpg',
+    desc: `PIZZA DOUGH, TOMATO SAUCE, PEPPERONI, OLIVE OIL, ROCCA, 
+    OREGANO, MOZZARELLA CHEESE`,
+    descAr: `عجينة بيتزا ، صلصة طماطم ، بيبروني ، زيت زيتون ، جرجير ، اوريجانو ،
+    جبنة موتزاريل`,
+   },
+   {
+    id: 2,
+    title: 'PINK’S SIGNATURE MARGHERITA',
+    titleAr: 'بينك سيجنتشر مارغريتا',
+    categoryEn: 'pizza',
+    category: 'Pizza / بيتزا',
+    price: 3.500,
+    img: 'public/images/pizza/pizza2.jpg',
+    desc: `PIZZA DOUGH, PINK SAUCE, OLIVE OIL, OREGANO, MOZZARELLA 
+    CHEESE`,
+    descAr: 'عجينة بيتزا ، صلصة وردية ، زيت زيتون ، زعتر ، جبنة موتزاريل',
+   },
+]
+      
+const rows = document.querySelector('.row')
+  window.addEventListener('DOMContentLoaded', function(){
+    const generatedHtml = Object.keys(menu).reduce((accum, currKey) => accum +
+      `
+        <div class="col-12 col-md-6 col-lg-4 mb-3" id=${menu[currKey].id} value=${menu[currKey].id} onclick="showCard(this.id)">
+            <div class="card" id="id1">
+                <img src=${menu[currKey].img} width="300" class="card-img-top border border-1" alt="...">
+                <div class="card-body p-0">
+                    <h5 class="card-title my-3 text-center">${menu[currKey].title}</h5>
+                    <h5 class="card-title text-center">${menu[currKey].titleAr}</h5>
+                    <hr>
+                </div>
+                <div class="">
+                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                </div>         
+            </div>
+        </div>`
+    ,'')          
+    rows.innerHTML = generatedHtml
+  },false)
+
+  const showCard = (e) => { 
+    localStorage.setItem('passedId',e)
+    window.location.href = "pizzaitem.html"
+  }
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>
+ 
+</body>
+</html>

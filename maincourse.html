@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>Kuwait Pink Menu</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-5">
+      <div class="my-5">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4">Main Course Menu</p>
+        <a class="navbar-brand" href="/index.html">
+            <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+   
+      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+    </div>
+
+<script>
+
+    const rowitems = document.getElementById("rows");
+    const result = document.getElementById("result");
+
+    const colClicked = e => { 
+    
+    const isDiv = e.target.nodeName === 'DIV';
+    
+    if(!isDiv) {
+        return
+    }
+    
+    console.log("Click" , e.target.id)
+   // result.innerHTML = `ID of <em>${e.target.innerHTML}</em> is <strong>${}</strong>`;
+    
+    }
+    rowitems.addEventListener("click", colClicked);
+   
+    const menu = [
+    {
+    id: 1,
+    title: 'RED PASTA W/ PARMESAN CHEESE',
+    titleAr: 'باستا صوص أحمر مع جبنة البرميزان',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 4.000,
+    img: 'public/images/maincourse/Red-Pasta-With-Parmesan-Cheese.jpg',
+    desc: `PAPPARDELLE, CHICKEN CUBES, GRILLED CHERRY TOMATO, PARSLEY, 
+    BASIL, ROMARA RED SAUCE, BASIL AND , PARSLEY, PARMESAN CHEESE`,
+    descAr:`بابارديل ، مكعبات دجاج ، طماطم كرزية مشوية ، بقدونس ، ريحان،
+    صلصة رومارا حمراء ، ريحان ، بقدونس ، جبنة بارميزان`
+   },
+   {
+    id: 2,
+    title: 'CLASSY PINK PENNE',
+    titleAr: 'كلاسي بينك بيني',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 3.750,
+    img: 'public/images/maincourse/Classy-Pink-Penne-Pasta.jpg',
+    desc: `PENNE PASTA, BETROOT, OLIVE OIL, OREGANO, SHALLOTS, MIX 
+    PARMESAN & MOZZARELLA CHEESE`,
+    descAr: `بيني باستا ، شمندر ، زيت زيتون ، اوريجانو ، كراث ، خليط جبنة
+    بارميزان و موزاريل`,
+   },
+   {
+    id:3 ,
+    title: 'CREAMY SHRIMP (OPTION W/ CHICKEN)', 
+    titleAr: '(ربيان كريمي (إختيار مع/ دجاج',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 4.250,
+    img: 'public/images/maincourse/creamypasta.jpg',
+    desc: `SHRIMP, OREGANO, MIX PARMESAN & MOZZARELLA CHEESE`,
+    descAr: `روبيان ، كريمة طبخ، اوريجانو، ميكس بارميزان و جبنة موتزاريل`,
+   },
+   {
+    id:4 ,
+    title: 'PINK STEAK BURGER',
+    titleAr: 'بينك ستيك برجر',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 3.750,
+    img: 'public/images/maincourse/Pink-Steak-burger.jpg',
+    desc: `2 BURGER PATTIES, MASHED POTATOES, MUSHROOM SAUCE`,
+    descAr: `قطعتين برجر ، بطاطس مهروسة ، صوص مشروم`,
+   },
+   {
+    id:5 ,
+    title: 'SHRIMP TACOS W/ GUACAMOLE',
+    titleAr: 'تاكوس ربيان مع الجواكامولي',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 3.750,
+    img: 'public/images/maincourse/Shrimp-Tacos-With-Guacamole.jpg',
+    desc: `FAJITA SHRIMP, WHITE ONION, MIX CAPSICUM, GUACAMOLE, GARLIC 
+    MAYO, MIX CHEESE`,
+    descAr: `روبيان فاهيتا ، بصل أبيض ، مزيج الفلفل ، جواكامولي ، مايونيز
+    بالثوم ، مزيج الجبن
+    `,
+   },
+   {
+    id: 6,
+    title: 'TENDERLOIN STEAK SIGNATURE BY PINK',
+    titleAr: 'تندرلوين ستيك سيجنتشر من بينك',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 7.750,
+    img: 'public/images/maincourse/Tenderloin-Steak.jpg',
+    desc: `BEEF TENDERLOIN, MIX MUSH POTATO, GRILLED CORN, SALSA VERDE`,
+    descAr: `لحم بقري تندرلوين ، مزيج بطاطا مهروسة ، ذرة مشوية ، صلصة
+    خضراء`,
+   },
+   {
+    id:7 ,
+    title: 'HERB CRUSTED TENDERLOIN',
+    titleAr: 'تندرليون بالاعشاب',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 5.000,
+    img: 'public/images/maincourse/Herb-Crusted-Tenderloin.jpg',
+    desc: `TENDERLOIN, CHICKPEAS, RED CAPSICUM, SWEET POTATO, HERBS, 
+    CREAMY MUSTARD SAUCE`,
+    descAr: `تندرليون ، حمص ، فلفل أحمر ، بطاطا حلوة ، أعشاب ، صلصة
+    كريمة الخردل`,
+   },
+   {
+    id: 8,
+    title: 'STEAK & BROCCOLI',
+    titleAr: 'ستيك وبروكلي',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 4.000,
+    img: 'public/images/maincourse/Steak-And-Broccoli.jpg',
+    desc: `TENDERLOIN, BROCCOLI, CHEESE SAUCE, MIX CHEESE, PINE NUTS, 
+    MUSHROOM SAUC`,
+    descAr: `تندرلوين ، بروكلي ، صوص جبن ، ميكس جبن ، صنوبر ، صوص مشروم`,
+   },
+   {
+    id:9 ,
+    title: 'GRILLED CHICKEN W/ASPARAGUS CHERRY TOMATOES',
+    titleAr: 'دجاج مشوي مع طماطم كرزية وهليون',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 5.500,
+    img: 'public/images/maincourse/Grilled-chicken.jpg',
+    desc: `GRILLED CHICKEN, ROMARA SAUCE, GRILLED LEAK, COCONUT SOUR 
+    DRESSING, CHERRY TOMATOES, ASPARAGUS`,
+    descAr: `دجاج مشوي ، صلصة رومارا ، مشوي مسرب ، صلصة جوز الهند
+    الحامضة ، طماطم كرزية ، هليون`,
+   },
+   {
+    id: 10,
+    title: 'HERBAL CHICKEN & RICE',
+    titleAr: 'أرز ودجاج بالأعشاب',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 3.750,
+    img: 'public/images/maincourse/Herbal-Chicken-And-Rice.jpg',
+    desc: `CHICKEN BREAST, ASSORTED CAPSICUM, RICE, SPRING ONION, WHITE 
+    & TASTY SAUCE`,
+    descAr: `صدر دجاج ، فلفل مشكل ، أرز ، بصل أخضر ، صلصة بيضاء و لذيذة`,
+   },
+   {
+    id:11 ,
+    title: 'CHICKEN & SAUTÉ VEGETABLE',
+    titleAr: 'دجاج وخضار سوتيه',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 3.750,
+    img: 'public/images/maincourse/Chicken-And-Saute-Vegetables.jpg',
+    desc: `2 GRILLED CHICKEN, BROCCOLI, MUSHROOMS, CARROTS, GREEN 
+    BEANS`,
+    descAr: `قطعتين (2) دجاج مشوي، بروكولي، فطر، جزر، فاصوليا خضراء`,
+   },
+]
+      
+const rows = document.querySelector('.row')
+  window.addEventListener('DOMContentLoaded', function(){
+    const generatedHtml = Object.keys(menu).reduce((accum, currKey) => accum +
+      `
+        <div class="col-12 col-md-6 col-lg-4 mb-3" id=${menu[currKey].id} value=${menu[currKey].id} onclick="showCard(this.id)">
+            <div class="card" id="id1">
+                <img src=${menu[currKey].img} width="300" class="card-img-top border border-1" alt="...">
+                <div class="card-body p-0">
+                    <h5 class="card-title my-3 text-center">${menu[currKey].title}</h5>
+                    <h5 class="card-title text-center">${menu[currKey].titleAr}</h5>
+                    <hr>
+                </div>
+                <div class="">
+                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                </div>         
+            </div>
+        </div>`
+    ,'')          
+    rows.innerHTML = generatedHtml
+  },false)
+
+  const showCard = (e) => { 
+    localStorage.setItem('passedId',e)
+    window.location.href = "maincourseitem.html"
+  }
+</script>
+
+ <script src="./js/bootstrap.min.js"></script>
+ <script src="menu.js" type="text/javascript"> </script>
+    
+
+</body>
+</html>

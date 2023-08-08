@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    font-family: sans-serif
+}
+
+
+.navbar-nav > li > a {
+    color: gray;
+}
+
+a {
+    color: black;
+}
+
+.row {
+    width: 90%;
+    /* height: 570px; */
+    margin-bottom: 25px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: --p-font-weight-semibold;
+}
+
+.cardshow {
+    width: 450px;
+}
