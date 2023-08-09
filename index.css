@@ -21,5 +21,11 @@ a {
 h5 {
     font-size: 18px;
     font-weight: --p-font-weight-semibold;
+    text-transform: capitalize;
 }
+
+p {
+    text-transform: capitalize;
+}
+
 
