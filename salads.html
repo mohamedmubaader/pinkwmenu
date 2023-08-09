@@ -14,18 +14,18 @@
         <a class="navbar-brand" href="/index.html">
             <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
         </a>
-        <p class="my-4 text-center fw-bold fs-4">Salads Menu</p>
+        <p class="my-4 text-center fw-bold fs-4 ptitle">Salads Menu</p>
         <a class="navbar-brand" href="/index.html">
-          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+          <p class="my-1 phover text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
         </a>
       </div>
    
-      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-2 text-capitalize" id="rows"></div>
     </div>
 
 <script>
 
-    const menu = [
+    const menus = [
     {
     id: 1,
     title: 'STRAWBERRY FETA',
@@ -68,7 +68,7 @@
     titleAr: 'سلطة الشمندر',
     categoryEn: 'salads',
     category: 'Salads / السلطات',
-    price: 3.750,
+    price: 3.500,
     img: 'public/images/salads/Beetroot-Salad.jpg',
     desc: `ROCCA, FRESH BEETROOT, SPINACH, FETA CHEESE, POMEGRANATE,
     PINE NUTS, BALSAMIC VINAIGRETTE`,
@@ -80,7 +80,7 @@
     titleAr: 'دوريتوس بيكن',
     categoryEn: 'salads',
     category: 'Salads / السلطات',
-    price: 3.750,
+    price: 3.500,
     img: 'public/images/salads/Dorito-Salad.jpg',
     desc: `CABBAGE, SWEET CORN, ROMAINE LETTUCE, TOMATO, ONION
     CARROTS, CHIVES, DORITOS, RANCH, CORIANDER`,
@@ -122,7 +122,7 @@
     titleAr: 'سلطة السيزر الكلاسيكية',
     categoryEn: 'salads',
     category: 'Salads / السلطات',
-    price: 3.250,
+    price: 3.750,
     img: 'public/images/salads/Caesar-Salad-classic.jpg',
     desc: `LETTUCE ROMAINE, CAESAR DRESSING, GARLIC CROUTON, PARMESAN
     CHEESE, GRILLED CHICKEN, MAYONNAISE, YELLOW MUSTARD, WHITE
@@ -131,6 +131,9 @@
     مشوي ، مايونيز ، خردل أصفر ، خل أبيض ، ثوم ، أنشوجة كبر`
   },
 ]
+
+let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
+    ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
       
 const rows = document.querySelector('.row')
   window.addEventListener('DOMContentLoaded', function(){
@@ -145,7 +148,7 @@ const rows = document.querySelector('.row')
                     <hr>
                 </div>
                 <div class="">
-                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                    <p class="my-1 text-center fw-bold priceColor">KD ${menu[currKey].price.toFixed(3)}</p>
                 </div>         
             </div>
         </div>`

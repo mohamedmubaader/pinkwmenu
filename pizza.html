@@ -14,24 +14,24 @@
         <a class="navbar-brand" href="/index.html">
             <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
         </a>
-        <p class="my-4 text-center fw-bold fs-4">Pizza Menu</p>
+        <p class="my-4 text-center fw-bold fs-4 ptitle">Pizza Menu</p>
         <a class="navbar-brand" href="/index.html">
-          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+          <p class="my-1 phover text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
         </a>
       </div>
    
-      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-2 text-capitalize" id="rows"></div>
     </div>
 
 <script>
-    const menu = [
+    const menus = [
     {
     id: 1,
     title: 'LITTLE ITALY PIZZA',
     titleAr: 'بيتزا ليتل إيطالي',
     categoryEn: 'pizza',
     category: 'Pizza / بيتزا',
-    price: 3.750,
+    price: 4.000,
     img: 'public/images/pizza/pizza1.jpg',
     desc: `PIZZA DOUGH, TOMATO SAUCE, PEPPERONI, OLIVE OIL, ROCCA, 
     OREGANO, MOZZARELLA CHEESE`,
@@ -44,13 +44,16 @@
     titleAr: 'بينك سيجنتشر مارغريتا',
     categoryEn: 'pizza',
     category: 'Pizza / بيتزا',
-    price: 3.500,
+    price: 3.750,
     img: 'public/images/pizza/pizza2.jpg',
     desc: `PIZZA DOUGH, PINK SAUCE, OLIVE OIL, OREGANO, MOZZARELLA 
     CHEESE`,
     descAr: 'عجينة بيتزا ، صلصة وردية ، زيت زيتون ، زعتر ، جبنة موتزاريل',
    },
 ]
+
+let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
+    ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
       
 const rows = document.querySelector('.row')
   window.addEventListener('DOMContentLoaded', function(){
@@ -65,7 +68,7 @@ const rows = document.querySelector('.row')
                     <hr>
                 </div>
                 <div class="">
-                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                    <p class="my-1 text-center fw-bold priceColor">KD ${menu[currKey].price.toFixed(3)}</p>
                 </div>         
             </div>
         </div>`

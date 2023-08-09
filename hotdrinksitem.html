@@ -14,17 +14,17 @@
         <a class="navbar-brand" href="/index.html">
             <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
         </a>
-        <p class="my-4 text-center fw-bold fs-4">Hot Drinks Menu</p>
+        <p class="my-4 text-center fw-bold fs-4 ptitle">Hot Drinks Menu</p>
         <a class="navbar-brand" href="/hotdrinks.html">
-          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+          <p class="my-1 phover text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
         </a>
       </div>
-      <div class="mb-5" id="rows"></div>      
+      <div class="text-capitalize" id="rows"></div>      
     </div>
     
 <script>
    
-    const menu = [
+    const menus = [
     {
     id: 1,
     title: 'ROSE COFFEE',
@@ -109,6 +109,9 @@
    },
 ]
 
+let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
+    ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
+
 const passedId = localStorage.getItem('passedId')
 const rowitems = document.getElementById("rows");
 
@@ -123,7 +126,7 @@ const items =
                 <hr>
             </div>
             <div class="">
-                <p class="my-1 text-center fw-bold my-3">KD ${menu[passedId-1].price.toFixed(3)}</p>
+                <p class="my-1 text-center fw-bold my-3 priceColor">KD ${menu[passedId-1].price.toFixed(3)}</p>
             </div>         
         </div>
     </div>`

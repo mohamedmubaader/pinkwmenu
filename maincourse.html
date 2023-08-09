@@ -14,35 +14,18 @@
         <a class="navbar-brand" href="/index.html">
             <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
         </a>
-        <p class="my-4 text-center fw-bold fs-4">Main Course Menu</p>
+        <p class="my-4 text-center fw-bold fs-4 ptitle">Main Course Menu</p>
         <a class="navbar-brand" href="/index.html">
-            <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+            <p class="my-1 phover text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
         </a>
       </div>
    
-      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-2 text-capitalize" id="rows"></div>
     </div>
 
 <script>
 
-    const rowitems = document.getElementById("rows");
-    const result = document.getElementById("result");
-
-    const colClicked = e => { 
-    
-    const isDiv = e.target.nodeName === 'DIV';
-    
-    if(!isDiv) {
-        return
-    }
-    
-    console.log("Click" , e.target.id)
-   // result.innerHTML = `ID of <em>${e.target.innerHTML}</em> is <strong>${}</strong>`;
-    
-    }
-    rowitems.addEventListener("click", colClicked);
-   
-    const menu = [
+    const menus = [
     {
     id: 1,
     title: 'RED PASTA W/ PARMESAN CHEESE',
@@ -180,6 +163,9 @@
     descAr: `قطعتين (2) دجاج مشوي، بروكولي، فطر، جزر، فاصوليا خضراء`,
    },
 ]
+
+let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
+    ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
       
 const rows = document.querySelector('.row')
   window.addEventListener('DOMContentLoaded', function(){
@@ -194,7 +180,7 @@ const rows = document.querySelector('.row')
                     <hr>
                 </div>
                 <div class="">
-                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                    <p class="my-1 text-center fw-bold priceColor">KD ${menu[currKey].price.toFixed(3)}</p>
                 </div>         
             </div>
         </div>`

@@ -14,28 +14,28 @@
         <a class="navbar-brand" href="/index.html">
             <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
         </a>
-        <p class="my-4 text-center fw-bold fs-4">Breakfast Menu</p>
-        <a class="navbar-brand" href="/index.html">
-          <p class="my-1 text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        <p class="my-4 text-center fw-bold fs-4 ptitle">Breakfast Menu</p>
+        <a class="ahover navbar-brand" href="/index.html">
+          <p class="my-1 phover text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
         </a>
       </div>
    
-      <div class="row row-cols-1 row-cols-md-2 g-2" id="rows"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-2 text-capitalize"  id="rows"></div>
     </div>
 
 <script>
 
-const menu = [
+const menus = [
   {
     id: 1,
     title: 'AVOCADO POACHED EGGS',
     titleAr: 'أفوكادو بوتشد إيقز',
     categoryEn: 'breakfast',
     category: 'Breakfast/الفطور',
-    price: 3.250,
+    price: 3.750,
     img: '/public/images/breakfast/Avocado-Poached-Eggs.jpg',
     desc: `2 eggs, avocado /guacamole, mix capsicum, sourdough bread,butter`,
-    descAr: `اثنان (2) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز`,
+    descAr: `اثنان بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز`,
   },                                    
   {
     id: 2,
@@ -54,10 +54,10 @@ const menu = [
     titleAr: 'بينك بان كيك (إختيار مع مابل سيريب أو الشوكولاته)',
     categoryEn: 'breakfast',
     category: 'Breakfast/الفطور',
-    price: 3.00,
+    price: 3.750,
     img: '/public/images/breakfast/Pink-Pancake-chocolate.jpg',
     desc: `3 PCS PANCAKES, MIX BERRIES, ICING SUGAR, MAPLE SYRUP, BUTTER`,
-    descAr: ` ثلاث (3) قطع بان كيك ، توت مشكل ، بودرة سكر ، مابل سيريب ، زبدة `,
+    descAr: ` ثلاث قطع بان كيك ، توت مشكل ، بودرة سكر ، مابل سيريب ، زبدة `,
  },
   {
     id: 4,
@@ -65,8 +65,8 @@ const menu = [
     titleAr: 'شكشوكة',
     categoryEn: 'breakfast',
     category: 'Breakfast/الفطور',
-    price: 3.500,
-    img: '/public/images/breakfast/Shakshoka-new.jpg',
+    price: 4.000,
+    img: '/public/images/breakfast/Shakshoka.jpg',
     desc: `GRILLED EGGS, MUSHROOM, TOMATO, ONION, FETA CHEESE, `,
     descAr: `بيض مشوي ، مشروم ، طماطم ، بصل ، جبنة فيتا`,
   },
@@ -90,10 +90,13 @@ const menu = [
     price: 3.500,
     img: '/public/images/breakfast/Classic-Egg-Benedict-new.jpg',
     desc: `2 POUCHED EGG, MINCED BEEF, ASSORTED HERBS, SESAME SEED HOLLANDISE SAUCE `,
-    descAr: ` ثلاث (3) بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز `,
+    descAr: ` ثلاث بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز `,
   },
          
 ];
+
+let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
+    ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
 
 const rows = document.querySelector('.row')
   window.addEventListener('DOMContentLoaded', function(){
@@ -108,7 +111,7 @@ const rows = document.querySelector('.row')
                     <hr>
                 </div>
                 <div class="">
-                    <p class="my-1 text-center fw-bold">KD ${menu[currKey].price.toFixed(3)}</p>
+                    <p class="my-1 text-center fw-bold priceColor">KD ${menu[currKey].price.toFixed(3)}</p>
                 </div>         
             </div>
         </div>`
