@@ -9,8 +9,8 @@
     <title>Kuwait Pink Menu</title>
 </head>
 <body>
-    <div class="container d-flex flex-column align-items-center my-5">
-      <div class="my-5">
+    <div class="container d-flex flex-column align-items-center my-3">
+      <div class="my-4">
         <a class="navbar-brand" href="index.html">
             <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
         </a>
@@ -133,12 +133,12 @@ const rowitems = document.getElementById("rows");
 
 const items =
     `
-    <div class="container d-flex flex-column align-items-center mb-5">
-        <div class="card cardshow mb-5" >
+    <div class="container d-flex flex-column align-items-center mb-3">
+        <div class="card cardshow mb-4" >
             <img src=${menu[passedId-1].img} width="300" class="card-img-top border border-1" alt="...">
             <div class="card-body p-0">
                 <h5 class="card-title my-3 text-center">${menu[passedId-1].title}</h5>
-                <h5 class="card-title text-center">${menu[passedId-1].titleAr}</h5>
+                <h5 class="card-title text-center arTile">${menu[passedId-1].titleAr}</h5>
                 <hr>
             </div>
             <div class="">

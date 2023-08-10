@@ -1,7 +1,6 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 17px;
-    height: 100vh;
 }
 
 
@@ -16,11 +15,11 @@ a {
 .row {
     width: 90%;
     /* height: 570px; */
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 h5 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: --p-font-weight-semibold;
     padding-left: .05rem;
     padding-right: .05rem;
@@ -43,6 +42,7 @@ li:hover {
 
 .ptitle {
     color:#c59d5f;
+    font-size: 19px;
 }
 
 .priceColor {
@@ -56,5 +56,10 @@ li:hover {
 
 .phover:hover {
     color: #a67326;
+}
+
+.arTile {
+    font-size: 19px;
+    font-weight: normal;
 }
 
