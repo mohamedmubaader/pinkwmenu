@@ -23,7 +23,7 @@
     </div>
     
 <script>
-   const menus = [
+    const menus = [
     {
     id: 1,
     title: 'RED PASTA W/ PARMESAN CHEESE',
@@ -39,6 +39,69 @@
    },
    {
     id: 2,
+    title: 'TENDERLOIN STEAK SIGNATURE BY PINK',
+    titleAr: 'تندرلوين ستيك سيجنتشر من بينك',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 7.750,
+    img: 'public/images/maincourse/tensteak.jpg',
+    desc: `BEEF TENDERLOIN, MIX MUSH POTATO, GRILLED CORN, SALSA VERDE`,
+    descAr: `لحم بقري تندرلوين ، مزيج بطاطا مهروسة ، ذرة مشوية ، صلصة
+    خضراء`,
+   },
+   {
+    id: 3,
+    title: 'HERB CRUSTED TENDERLOIN',
+    titleAr: 'تندرليون بالاعشاب',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 5.000,
+    img: 'public/images/maincourse/herbcrusted.jpg',
+    desc: `TENDERLOIN, CHICKPEAS, RED CAPSICUM, SWEET POTATO, HERBS, 
+    CREAMY MUSTARD SAUCE`,
+    descAr: `تندرليون ، حمص ، فلفل أحمر ، بطاطا حلوة ، أعشاب ، صلصة
+    كريمة الخردل`,
+   },
+   {
+    id: 4,
+    title: 'BRISKET',
+    titleAr: 'بريسكت',
+    categoryEn: 'burgers',
+    category: 'Burgers / برجر',
+    price: 4.500,
+    img: 'public/images/burgers/brisket.jpg',
+    desc: `BEEF BRISKET, CHOPPED LETTUCE, WHITE ONION`,
+    descAr: `بريسكت لحم بقري ، خس مقطع ، بصل أبيض ، ملح وفلفل ، مسحوق
+    فلفل حار`,
+   },
+   {
+    id: 5,
+    title: 'GRILLED CHICKEN W/ASPARAGUS CHERRY TOMATOES',
+    titleAr: 'دجاج مشوي مع طماطم كرزية وهليون',
+    categoryEn: 'maincourse',
+    category: 'Main Course / أطباق رئيسية',
+    price: 5.500,
+    img: 'public/images/maincourse/grillchic.jpg',
+    desc: `GRILLED CHICKEN, ROMARA SAUCE, GRILLED LEAK, COCONUT SOUR 
+    DRESSING, CHERRY TOMATOES, ASPARAGUS`,
+    descAr: `دجاج مشوي ، صلصة رومارا ، مشوي مسرب ، صلصة جوز الهند
+    الحامضة ، طماطم كرزية ، هليون`,
+   },
+   {
+    id: 6,
+    title: 'SLIDERS (CHICKEN OR BEEF)',
+    titleAr: 'سلايدر (دجاج او لحم بقري)',
+     categoryEn: 'burgers',
+    category: 'Burgers / برجر',
+    price: 3.750,
+    img: 'public/images/burgers/sliders.jpg',
+    desc: `2 PCS CHICKEN OR BEEF PATTIES, CHEESE, LETTUCE, ONIONS, 
+    PICKLES, REGULAR FRIES, KETCHUP`,
+    descAr: `قطعتين دجاج أو لحم بقري ، جبن ، خس ، بصل ، مخلل ، بطاطا حجم
+    عادي ، كاتشب`,
+   },
+   {
+    id: 7,
     title: 'CLASSY PINK PENNE',
     titleAr: 'كلاسي بينك بيني',
     categoryEn: 'maincourse',
@@ -51,7 +114,7 @@
     بارميزان و موزاريل`,
    },
    {
-    id:3 ,
+    id: 8,
     title: 'CREAMY SHRIMP (OPTION W/ CHICKEN)', 
     titleAr: '(ربيان كريمي (إختيار مع/ دجاج',
     categoryEn: 'maincourse',
@@ -62,7 +125,7 @@
     descAr: `روبيان ، كريمة طبخ، اوريجانو، ميكس بارميزان و جبنة موتزاريل`,
    },
    {
-    id:4 ,
+    id: 9,
     title: 'PINK STEAK BURGER',
     titleAr: 'بينك ستيك برجر',
     categoryEn: 'maincourse',
@@ -73,7 +136,7 @@
     descAr: `قطعتين برجر ، بطاطس مهروسة ، صوص مشروم`,
    },
    {
-    id:5 ,
+    id: 10,
     title: 'SHRIMP TACOS W/ GUACAMOLE',
     titleAr: 'تاكوس ربيان مع الجواكامولي',
     categoryEn: 'maincourse',
@@ -87,32 +150,7 @@
     `,
    },
    {
-    id: 6,
-    title: 'TENDERLOIN STEAK SIGNATURE BY PINK',
-    titleAr: 'تندرلوين ستيك سيجنتشر من بينك',
-    categoryEn: 'maincourse',
-    category: 'Main Course / أطباق رئيسية',
-    price: 7.750,
-    img: 'public/images/maincourse/tensteak.jpg',
-    desc: `BEEF TENDERLOIN, MIX MUSH POTATO, GRILLED CORN, SALSA VERDE`,
-    descAr: `لحم بقري تندرلوين ، مزيج بطاطا مهروسة ، ذرة مشوية ، صلصة
-    خضراء`,
-   },
-   {
-    id:7 ,
-    title: 'HERB CRUSTED TENDERLOIN',
-    titleAr: 'تندرليون بالاعشاب',
-    categoryEn: 'maincourse',
-    category: 'Main Course / أطباق رئيسية',
-    price: 5.000,
-    img: 'public/images/maincourse/herbcrusted.jpg',
-    desc: `TENDERLOIN, CHICKPEAS, RED CAPSICUM, SWEET POTATO, HERBS, 
-    CREAMY MUSTARD SAUCE`,
-    descAr: `تندرليون ، حمص ، فلفل أحمر ، بطاطا حلوة ، أعشاب ، صلصة
-    كريمة الخردل`,
-   },
-   {
-    id: 8,
+    id: 11,
     title: 'STEAK & BROCCOLI',
     titleAr: 'ستيك وبروكلي',
     categoryEn: 'maincourse',
@@ -123,21 +161,9 @@
     MUSHROOM SAUCE`,
     descAr: `تندرلوين ، بروكلي ، صوص جبن ، ميكس جبن ، صنوبر ، صوص مشروم`,
    },
+   
    {
-    id:9 ,
-    title: 'GRILLED CHICKEN W/ASPARAGUS CHERRY TOMATOES',
-    titleAr: 'دجاج مشوي مع طماطم كرزية وهليون',
-    categoryEn: 'maincourse',
-    category: 'Main Course / أطباق رئيسية',
-    price: 5.500,
-    img: 'public/images/maincourse/grillchic.jpg',
-    desc: `GRILLED CHICKEN, ROMARA SAUCE, GRILLED LEAK, COCONUT SOUR 
-    DRESSING, CHERRY TOMATOES, ASPARAGUS`,
-    descAr: `دجاج مشوي ، صلصة رومارا ، مشوي مسرب ، صلصة جوز الهند
-    الحامضة ، طماطم كرزية ، هليون`,
-   },
-   {
-    id: 10,
+    id: 12,
     title: 'HERBAL CHICKEN & RICE',
     titleAr: 'أرز ودجاج بالأعشاب',
     categoryEn: 'maincourse',
@@ -149,7 +175,7 @@
     descAr: `صدر دجاج ، فلفل مشكل ، أرز ، بصل أخضر ، صلصة بيضاء و لذيذة`,
    },
    {
-    id:11 ,
+    id: 13,
     title: 'CHICKEN & SAUTÉ VEGETABLE',
     titleAr: 'دجاج وخضار سوتيه',
     categoryEn: 'maincourse',
@@ -161,19 +187,7 @@
     descAr: `قطعتين دجاج مشوي، بروكولي، فطر، جزر، فاصوليا خضراء`,
    },
    {
-    id: 12,
-    title: 'BRISKET',
-    titleAr: 'بريسكت',
-    categoryEn: 'burgers',
-    category: 'Burgers / برجر',
-    price: 4.500,
-    img: 'public/images/burgers/brisket.jpg',
-    desc: `BEEF BRISKET, CHOPPED LETTUCE, WHITE ONION`,
-    descAr: `بريسكت لحم بقري ، خس مقطع ، بصل أبيض ، ملح وفلفل ، مسحوق
-    فلفل حار`,
-   },
-   {
-    id: 13,
+    id: 14,
     title: 'CLASSIC LOS ANGELES',
     titleAr: 'كلاسيك لوس انجلوس',
      categoryEn: 'burgers',
@@ -186,7 +200,7 @@
     صوص خاصة`,
    },
    {
-    id: 14,
+    id: 15,
     title: 'GRILLED CHICKEN BURGER',
     titleAr: 'برغر الدجاج المشوي',
      categoryEn: 'burgers',
@@ -198,7 +212,7 @@
     descAr: `دجاج ، بصل ، خردل ، جبنة ، مخلل ، خس ، طماطم ، صوص خاصة`,
    },
    {
-    id: 15,
+    id: 16,
     title: 'CLASSIC CRUNCHY CHICKEN',
     titleAr: 'كلاسيك دجاج كرنشي',
      categoryEn: 'burgers',
@@ -208,19 +222,6 @@
     desc: `CRISPY CHICKEN BREAST, RED CABBAGE, CARROTS, LETTUCE, 
     PICKLES, CHEESE, YUMMY SAUCE`,
     descAr: `صدر دجاج مقرمش ، ملفوف أحمر ، جزر ، خس ، مخلل ، جبن ، صلصة لذيذة`,
-   },
-   {
-    id: 16,
-    title: 'SLIDERS (CHICKEN OR BEEF)',
-    titleAr: 'سلايدر (دجاج او لحم بقري)',
-     categoryEn: 'burgers',
-    category: 'Burgers / برجر',
-    price: 3.750,
-    img: 'public/images/burgers/sliders.jpg',
-    desc: `2 PCS CHICKEN OR BEEF PATTIES, CHEESE, LETTUCE, ONIONS, 
-    PICKLES, REGULAR FRIES, KETCHUP`,
-    descAr: `قطعتين دجاج أو لحم بقري ، جبن ، خس ، بصل ، مخلل ، بطاطا حجم
-    عادي ، كاتشب`,
    },
    {
     id: 17,

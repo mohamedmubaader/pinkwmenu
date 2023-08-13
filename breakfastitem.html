@@ -36,17 +36,50 @@ const menus = [
   },                                    
   {
     id: 2,
+    title: 'Croissant Benedict',
+    titleAr: 'كرواسان بندكت',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.500,
+    img: 'public/images/breakfast/croissantbenedict.jpg',
+    desc: ' ',
+    descAr: ``,
+  },                                    
+  {
+    id: 3,
+    title: 'Omlette with Wild Mushroom & Mozzarella',
+    titleAr: 'اومليت بالجبن والفطر البري',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 3.500,
+    img: 'public/images/breakfast/omlettewildmushroom.jpg',
+    desc: ' ',
+    descAr: ``,
+  },
+  {
+    id: 4,
+    title: 'Chocolate Croissant',
+    titleAr: 'كرواسون بالكاكاو',
+    categoryEn: 'breakfast',
+    category: 'Breakfast/الفطور',
+    price: 2.750,
+    img: 'public/images/breakfast/chocolatecroissant.jpg',
+    desc: ' ',
+    descAr: ``,
+  },
+  {
+    id: 5,
     title: 'BERRIES FRENCH TOAST',
     titleAr: 'توست فرنسي بالتوت',
     categoryEn: 'breakfast',
     category: 'Breakfast/الفطور',
     price: 3.500,
     img: 'public/images/breakfast/berriestoast.jpg',
-    desc: 'FRENCH TOAST, MIX BERRIES, MAPLE SYRUP',
+    desc: 'FRENCH TOAST, MIX BERRIES, MAPLE ',
     descAr: `توست فرنسي ، توت مشكل ، مابل سيريب`,
   },
  {
-    id: 3,
+    id: 6,
     title: 'PINK PANCAKES (OPTION W/ MAPLE OR CHOCOLATE SAUCE)',
     titleAr: 'بينك بان كيك (إختيار مع مابل سيريب أو الشوكولاته)',
     categoryEn: 'breakfast',
@@ -57,7 +90,7 @@ const menus = [
     descAr: ` ثلاث قطع بان كيك ، توت مشكل ، بودرة سكر ، مابل سيريب ، زبدة `,
  },
   {
-    id: 4,
+    id: 7,
     title: 'SHAKSHOKA',
     titleAr: 'شكشوكة',
     categoryEn: 'breakfast',
@@ -68,7 +101,7 @@ const menus = [
     descAr: `بيض مشوي ، مشروم ، طماطم ، بصل ، جبنة فيتا`,
   },
   {
-    id: 5,
+    id: 8,
     title: 'CLUB SANDWICH AND FRIES',
     titleAr: 'كلوب ساندويتش مع بطاط',
        categoryEn: 'breakfast',
@@ -79,7 +112,7 @@ const menus = [
     descAr: `خبز ابيض ، ميكس رانش مايو ، تركي الديك الرومي ،تركي اللحم المقدد ، خس ، طماطم ، بيضة ، جبنة سويسرية`,
   },
   {
-    id: 6,
+    id: 9,
     title: 'CLASSIC EGGS BENEDICT',
     titleAr: 'بيض بينديكت الكلاسيكيه',
     categoryEn: 'breakfast',
@@ -87,10 +120,10 @@ const menus = [
     price: 3.500,
     img: 'public/images/breakfast/classicegg.jpg',
     desc: `2 POUCHED EGG, MINCED BEEF, ASSORTED HERBS, SESAME SEED HOLLANDISE SAUCE `,
-    descAr: `  اثنان بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز `,
-  },       
+    descAr: ` ثلاث بيض نصف سلق ، لحم بقري مفروم ، أعشاب متنوعة ، بذور السمسم ، صلصة هولانديز `,
+  },
+         
 ];
-
 let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
   ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
     
