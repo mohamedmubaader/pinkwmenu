@@ -1,6 +1,6 @@
-categories = ['Breakfast/الفطور','Appetizers/المقبلات','Salads / السلطات','Burgers / برجر',
-'Pizza / بيتزا','Main Course / أطباق رئيسية','Desserts / حلويات','Hot Drinks / مشروبات ساخنه','Cold Drinks / مشروبات باردة']
+categories = ['Breakfast/الفطور','Appetizers/المقبلات','Salads / السلطات','Main Course / أطباق رئيسية','Desserts / حلويات','Hot Drinks / مشروبات ساخنه','Cold Drinks / مشروبات باردة']
 
+//'Burgers / برجر','Pizza / بيتزا',
 
 let navbar = document.getElementById('navbar')
 
@@ -26,12 +26,12 @@ for (j=0; j <= categories.length-1; j++)
         case 'Salads / السلطات': 
           window.location.href = "salads.html"
           break;
-        case 'Burgers / برجر': 
-          window.location.href = "burgers.html"
-          break;
-        case 'Pizza / بيتزا': 
-        window.location.href = "pizza.html"
-        break;
+        // case 'Burgers / برجر': 
+        //   window.location.href = "burgers.html"
+        //   break;
+        // case 'Pizza / بيتزا': 
+        // window.location.href = "pizza.html"
+        // break;
         case 'Main Course / أطباق رئيسية': 
           window.location.href = "maincourse.html"
           break;
