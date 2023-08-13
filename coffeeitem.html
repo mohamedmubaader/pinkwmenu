@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="index.css">
+    <title>PINK LOS ANGELES</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center my-3">
+      <div class="my-4">
+        <a class="navbar-brand" href="index.html">
+            <img src="./public/pinklogo.png"  width="200" alt="" class="d-inline-block align-middle mr-2">    
+        </a>
+        <p class="my-4 text-center fw-bold fs-4 ptitle">Coffee Menu</p>
+        <a class="navbar-brand" href="coffee.html">
+          <p class="my-1 phover text-center fw-bold fs-4 border-2 border py-2 px-1 rounded-2" id="back">Back / الرجوع</p>
+        </a>
+      </div>
+      <div class="text-capitalize" id="rows"></div>      
+    </div>
+    
+<script>
+    const menus = [
+    {
+    id: 1,
+    title: 'ROSE COFFEE',
+    titleAr: 'روز كوفي',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.500,
+    img: 'public/images/hotdrinks/roselatte.jpg',
+   },
+   {
+    id: 2,
+    title: 'ARABIC COFFEE DALLAH (4 PERSONS)',
+    titleAr: 'قهوة عربية (دلة)',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 3.750,
+    img: 'public/images/hotdrinks/arabiccoffeedallah.jpg',
+   },
+   {
+    id: 3,
+    title: 'CARAMEL LATTE',
+    titleAr: 'كراميل لاتيه',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.500,
+    img: 'public/images/hotdrinks/roselattee.jpg',
+   },
+   {
+    id: 4,
+    title: 'LATTE CLASSIC',
+    titleAr: 'كلاسيك لاتيه',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.250,
+    img: 'public/images/hotdrinks/hotlatteclassic.jpg',
+   },
+   {
+    id: 5,
+    title: 'VANILLA / GOLDEN LATTE',
+    titleAr: 'فانيليا / جولدن لاتيه',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.500,
+    img: 'public/images/hotdrinks/roselatte.jpg',
+   },
+   {
+    id: 6,
+    title: 'SPANISH LATTE',
+    titleAr: 'لاتية أسباني',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.500,
+    img: 'public/images/hotdrinks/roselatte.jpg',
+   },
+   {
+    id: 7,
+    title: 'CAPPUCINO',
+    titleAr: 'كابتشينو',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.500,
+    img: 'public/images/hotdrinks/cappuccino.jpg',
+   },
+   {
+    id: 8,
+    title: 'FLAT WHITE',
+    titleAr: 'فلات وايت',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks/ مشروبات ساخنه',
+    price: 2.500,
+    img: 'public/images/hotdrinks/flatwhite.jpg',
+   },
+   {
+    id: 9,
+    title: 'BLACK / GREEN TEA',
+    titleAr: 'شاي اسود / اخضر',
+    categoryEn: 'hotdrinks',
+    category: 'Hot Drinks / مشروبات ساخنه',
+    price: 2.000,
+    img: 'public/images/hotdrinks/tea.jpg',
+    
+   },
+   {
+    id: 10,
+    title: 'PINK’S SIGNATURE ICED LATTE',
+    titleAr: 'لاتية مثلج بينك سجنتشر',
+    categoryEn: 'colddrinks',
+    category: 'Cold Drinks / مشروبات باردة',
+    price: 2.500,
+    img: 'public/images/colddrinks/pinksignatureicedlatte.jpg',
+   },   
+   {
+    id: 11,
+    title: 'CARAMEL LATTE',
+    titleAr: 'كراميل لاتيه',
+    categoryEn: 'colddrinks',
+    category: 'Cold Drinks / مشروبات باردة',
+    price: 2.500,
+    img: 'public/images/colddrinks/icedcaramel.jpg',
+   },   
+   {
+    id: 12,
+    title: 'ICED SPANISH LATTE',
+    titleAr: 'لاتيه أسباني مثلج',
+    categoryEn: 'colddrinks',
+    category: 'Cold Drinks / مشروبات باردة',
+    price: 2.500,
+    img: 'public/images/colddrinks/icedspanishlatte.jpg',
+   },   
+   {
+    id: 13,
+    title: 'ROSE LATTE',
+    titleAr: 'روز لاتيه',
+    categoryEn: 'colddrinks',
+    category: 'Cold Drinks / مشروبات باردة',
+    price: 2.500,
+    img: 'public/images/colddrinks/icedroselatte.jpg',
+   },   
+]
+
+let menu = menus.map(x => Object.fromEntries(Object.entries(x).map(
+    ([key, value]) => [key, typeof value == 'string' ? value.toLowerCase() : value])));
+
+const passedId = localStorage.getItem('passedId')
+const rowitems = document.getElementById("rows");
+
+const items =
+    `
+    <div class="container d-flex flex-column align-items-center mb-4">
+        <div class="card cardshow mb-5" >
+            <img src=${menu[passedId-1].img} width="300" class="card-img-top border border-1" alt="...">
+            <div class="card-body p-0">
+                <h5 class="card-title my-3 text-center">${menu[passedId-1].title}</h5>
+                <h5 class="card-title text-center">${menu[passedId-1].titleAr}</h5>
+                <hr>
+            </div>
+            <div class="">
+                <p class="my-1 text-center fw-bold my-3 priceColor">KD ${menu[passedId-1].price.toFixed(3)}</p>
+            </div>         
+        </div>
+    </div>`
+
+ rowitems.innerHTML = items
+ localStorage.clear()
+</script>  
+
+ <script src="./js/bootstrap.min.js"></script>
+ <script src="menu.js" type="text/javascript"> </script>
+    
+
+</body>
+</html>

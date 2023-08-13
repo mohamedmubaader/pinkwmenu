@@ -1,4 +1,4 @@
-categories = ['Breakfast/الفطور','Appetizers/المقبلات','Salads / السلطات','Main Course / أطباق رئيسية','Desserts / حلويات','Hot Drinks / مشروبات ساخنه','Cold Drinks / مشروبات باردة']
+categories = ['Breakfast/الفطور','Appetizers/المقبلات','Salads/السلطات','Main Course/أطباق رئيسية','Desserts/حلويات','Coffee/القهوه ','Drinks/المشروبات']
 
 //'Burgers / برجر','Pizza / بيتزا',
 
@@ -12,7 +12,7 @@ for (j=0; j <= categories.length-1; j++)
     li.appendChild(a)
     a.innerHTML = categories[j]
     a.classList.add('nav-link')
-    li.setAttribute('style','font-size:35px; cursor:pointer; hover:font-weight:700')
+    li.setAttribute('style','font-size:23px; cursor:pointer; font-weight:bold')
     navbar.appendChild(li)
 
     li.addEventListener('click',function(e){
@@ -23,7 +23,7 @@ for (j=0; j <= categories.length-1; j++)
         case 'Appetizers/المقبلات': 
           window.location.href = "appetizers.html"
           break;
-        case 'Salads / السلطات': 
+        case 'Salads/السلطات': 
           window.location.href = "salads.html"
           break;
         // case 'Burgers / برجر': 
@@ -32,17 +32,17 @@ for (j=0; j <= categories.length-1; j++)
         // case 'Pizza / بيتزا': 
         // window.location.href = "pizza.html"
         // break;
-        case 'Main Course / أطباق رئيسية': 
+        case 'Main Course/أطباق رئيسية': 
           window.location.href = "maincourse.html"
           break;
-        case 'Desserts / حلويات': 
+        case 'Desserts/حلويات': 
           window.location.href = "desserts.html"
           break;
-        case 'Hot Drinks / مشروبات ساخنه': 
-          window.location.href = "hotdrinks.html"
+        case 'Coffee/القهوه ': 
+          window.location.href = "coffee.html"
           break;
-        case 'Cold Drinks / مشروبات باردة': 
-          window.location.href = "colddrinks.html"
+        case 'Drinks/المشروبات': 
+          window.location.href = "drinks.html"
           break;
         default:
       }
