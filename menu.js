@@ -12,7 +12,7 @@ for (j=0; j <= categories.length-1; j++)
     li.appendChild(a)
     a.innerHTML = categories[j]
     a.classList.add('nav-link')
-    li.setAttribute('style','font-size:18px; cursor:pointer; hover:font-weight:600')
+    li.setAttribute('style','font-size:25px; cursor:pointer; hover:font-weight:800')
     navbar.appendChild(li)
 
     li.addEventListener('click',function(e){

@@ -63,3 +63,8 @@ li:hover {
     font-weight: normal;
 }
 
+@media (min-width: 576px) {
+    .container, .container-sm { 
+        max-width: 600px;
+    }
+}
